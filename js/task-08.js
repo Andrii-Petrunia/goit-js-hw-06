@@ -14,10 +14,12 @@ function onFormSubmit(event) {
   }
   const formData = new FormData(event.currentTarget);
 
+  const formDataObject = {};
   formData.forEach((value, name) => {
-    console.log("onFormSubmit -> name", name);
-    console.log("onFormSubmit -> value", value);
+    formDataObject[name] = value;
   });
+
+  console.log(formDataObject);
 
   form.reset();
 }
